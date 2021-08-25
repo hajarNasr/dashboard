@@ -1,0 +1,131 @@
+@import "../../sass/fonts";
+@import "../../sass/colors";
+@import "../../sass/mixins";
+
+#dashboard {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  grid-gap: 20px;
+  flex: 0.65;
+  .name {
+    font-weight: bold;
+  }
+  .title {
+    color: $gray;
+  }
+  .avatar {
+    display: block;
+    width: 40%;
+    margin: auto;
+  }
+}
+#top-view {
+  grid-column: span 2;
+  h1 {
+    @extend .font-rubik;
+    font-size: 1.5rem;
+  }
+  &_members {
+    @include d-flex(space-around);
+    @extend .font-arial;
+    margin-top: 15px;
+
+    > div {
+      flex: 0.3;
+      text-align: center;
+      border-radius: 30px;
+      padding: 4% 0;
+      box-shadow: 2px 1px 2px rgb(0 0 0 / 10%);
+      line-height: 1.5;
+      #slack {
+        position: absolute;
+        bottom: 0;
+        right: 30%;
+      }
+      &:first-child {
+        background: #f7f1ee;
+      }
+      &:nth-child(2) {
+        background: #ebf1ff;
+      }
+      &:last-child {
+        background: #e4eaf0;
+      }
+
+      button {
+        background: $white;
+        border-radius: 30px;
+        padding: 4%;
+        border: none;
+        color: $dark-blue;
+        font-weight: 550;
+        font-size: 14px;
+        margin-top: 9%;
+        width: 80%;
+        @extend .font-helv;
+      }
+    }
+    @media (max-width: 600px) {
+      flex-direction: column;
+      width: 70%;
+      margin: auto;
+      > div {
+        margin-top: 15px;
+      }
+    }
+  }
+
+  @media (max-width: 800px) {
+    flex: 0.8;
+  }
+}
+
+#top-member {
+  @extend .font-arial;
+  text-align: center;
+  line-height: 1.5;
+  position: relative;
+
+  #three-dots {
+    top: 15px;
+    right: 15px;
+  }
+  .name,
+  .title {
+    font-size: 1rem;
+    @extend .font-arial;
+  }
+  > div {
+    box-shadow: 0px 18px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+    padding: 8% 0;
+    ul {
+      width: 60%;
+      margin: auto;
+      margin-top: 5%;
+      @include d-flex(center);
+      li {
+        padding: 0 8px;
+        span {
+          display: block;
+          font-weight: 550;
+          @extend.font-rubik;
+          &:first-child {
+            color: $dark-blue;
+            font-size: 16px;
+          }
+          &:nth-child(2) {
+            color: $gray;
+            font-size: 14px;
+          }
+        }
+      }
+      li:not(:last-child) {
+        border-right: 1px solid gray;
+      }
+    }
+  }
+  @media (max-width: 800px) {
+    grid-column: span 2;
+  }
+}
