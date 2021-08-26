@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   AVATAR_ICO,
   BARS_ICO,
@@ -18,9 +18,22 @@ const SideBar = () => {
     setIsSidebarTransformed(!isSidebarTranformed);
   };
 
+  const clickOutsideRef = useRef();
+
+  useEffect(() => {
+    function handleClickOutside(e) {
+      if (!clickOutsideRef.current.contains(e.target)) {
+        setIsSidebarTransformed(true);
+      }
+    }
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, []);
+
   return (
     <section
       className="side-bar"
+      ref={clickOutsideRef}
       style={{
         transform: isSidebarTranformed ? "translateX(-100%)" : "translateX(0)",
       }}
