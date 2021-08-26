@@ -1,0 +1,41 @@
+@import "../../sass/fonts";
+@import "../../sass/colors";
+@import "../../sass/mixins";
+
+#today {
+  @extend .font-rubik;
+  margin-bottom: 25px;
+  h3 {
+    color: $dark-blue;
+    font-size: 1rem;
+  }
+  .today-item {
+    @include d-flex(space-between, center);
+    border: 1px solid $very-light-gray;
+    border-radius: 15px;
+    padding: 3% 5%;
+    margin-top: 10px;
+    > div {
+      @include d-flex-col;
+      span {
+        &:first-child {
+          color: $dark-blue;
+          font-size: 1.2rem;
+        }
+        &:last-child {
+          color: $gray;
+          padding-top: 5px;
+        }
+      }
+      &:nth-child(2) {
+        flex: 0.8;
+      }
+    }
+    #today-date {
+      text-align: center;
+      padding: 4%;
+      box-shadow: 3px 1px 20px rgba(0, 0, 0, 0.15);
+      border-radius: 20px;
+    }
+  }
+}

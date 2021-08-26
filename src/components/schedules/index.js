@@ -1,3 +1,4 @@
+import Today from "../today";
 import {
   LineChart,
   Line,
@@ -12,6 +13,7 @@ import "./styles.scss";
 const Schedules = () => (
   <section id="schedules">
     <Charts />
+    <Today />
   </section>
 );
 
