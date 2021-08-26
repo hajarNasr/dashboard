@@ -1,0 +1,14 @@
+@mixin d-flex($justify: null, $align: null) {
+  display: flex;
+  @if ($justify) {
+    justify-content: $justify;
+  }
+  @if ($align) {
+    align-items: $align;
+  }
+}
+
+@mixin d-flex-col($justify: null, $align: null) {
+  @include d-flex($justify, $align);
+  flex-direction: column;
+}

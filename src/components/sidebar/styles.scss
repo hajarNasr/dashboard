@@ -1,0 +1,29 @@
+@import "../../sass/colors";
+@import "../../sass/mixins";
+
+.side-bar {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $light-gray;
+  @include d-flex-col(null, center);
+  padding: 10px 0 10px 0;
+  nav {
+    @include d-flex-col(space-evenly);
+    flex: 1;
+  }
+  #sidebar-label {
+    position: absolute;
+    width: 250%;
+    bottom: 20px;
+    z-index: -1;
+    background-color: $light-gray;
+    height: 50px;
+    @include d-flex(flex-end);
+    border: none;
+    outline: none;
+    border-radius: 8px;
+  }
+  transition: transform 0.3s ease-in;
+}
