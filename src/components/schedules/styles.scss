@@ -1,0 +1,35 @@
+@import "../../sass/fonts";
+@import "../../sass/colors";
+@import "../../sass/mixins";
+
+#schedules {
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 0.35;
+  h2 {
+    @extend .font-rubik;
+    font-size: 1.5rem;
+  }
+  .chart-wrapper {
+    height: 150px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    @extend .font-arial;
+    border: 1px solid $very-light-blue;
+    box-sizing: border-box;
+    border-radius: 15px;
+    padding: 3%;
+    h5 {
+      color: $light-blue;
+    }
+  }
+  @media (max-width: 800px) {
+    flex: 0.2;
+    padding-left: 0;
+    padding-top: 20px;
+  }
+  @media (min-width: 1500px) {
+    height: 300px;
+  }
+}
